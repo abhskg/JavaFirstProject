@@ -4,11 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- * Unit test for simple App.
- */
 public class CheckEvenTest 
-    extends TestCase
 {
 	private CheckEven Chk;
     
@@ -21,8 +17,7 @@ public class CheckEvenTest
     public void twentyTwo() {
         boolean result = new Chk.check(22);
         assertTrue(true == result);
-    }
-	
+    }	
 	
 	@Test
     public void thirtyNine() {
@@ -38,6 +33,5 @@ public class CheckEvenTest
     public void negativeThirtyTwo() {
         boolean result = new Chk.check(22);
         assertTrue(true == result);
-    }
-	
+    }	
 }
