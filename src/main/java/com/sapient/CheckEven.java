@@ -4,7 +4,7 @@ package com.sapient;
  * Program to check the number is Even or Not 
  **/
 public class CheckEven{
-	public static boolean main(int x)		/* Previously the function isEven*/ 
+	public boolean check(int x)		/* Previously the function isEven*/ 
 	{ 
 		if(x%2==0) 
 			return true; 

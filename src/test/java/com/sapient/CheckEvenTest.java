@@ -1,8 +1,8 @@
 package com.sapient;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.Before;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  * Unit test for simple App.
@@ -10,58 +10,34 @@ import junit.framework.TestSuite;
 public class CheckEvenTest 
     extends TestCase
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public CheckEvenTest( String testName )
-    {
-        super( testName );
-    }
+	private CheckEven Chk;
+    
+	@Before
+	public void setup() {
+		Chk = new CheckEven() ;
+	}
 
-
-	
-    public void twentyTwo() throws Exception {
-        boolean result = new CheckEven(22);
-        assertThat(result, true);
+	@Test
+    public void twentyTwo() {
+        boolean result = new Chk.check(22);
+        assertTrue(true == result);
     }
 	
 	
-	
-    public void thirtyNine() throws Exception {
-        boolean result = new CheckEven(39);
-        assertThat(result, false);
+	@Test
+    public void thirtyNine() {
+        boolean result = new Chk.check(39);
+        assertTrue(true == result);
+    }
+	@Test
+    public void negaiveTwelve() {
+        boolean result = new Chk.check(-12);
+        assertTrue(true == result);
+    }
+	@Test
+    public void negativeThirtyTwo() {
+        boolean result = new Chk.check(22);
+        assertTrue(true == result);
     }
 	
-	
-	
-    public void twelve() throws Exception {
-        boolean result = new CheckEven(12);
-        assertThat(result, true);
-    }
-	
-	
-	
-    public void thirtyTwo() throws Exception {
-        boolean result = new CheckEven(32);
-        assertThat(result, true);
-    }
-	
-
-    /**
-     * @return the suite of tests being tested
-     
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }*/
-
-    /**
-     * Rigourous Test :-)
-     
-    public void testApp()
-    {
-        assertTrue( true );
-    }*/
 }
