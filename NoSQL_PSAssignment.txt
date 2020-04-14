@@ -1,0 +1,62 @@
+
+======================================================================================
+				NoSQL Assignment
+=====================================================================================
+
+01. Write the query to display all the documents in the collection.  
+
+Sol. db.Employees.find()	//db.Employees.find().pretty() 
+
+------------------------------------------------------------------------------------------
+
+02. Write the query to display the fields _id, fname  for all the documents in the collection.
+
+Sol.  db.Employees.find( {}, {_id:1, fname:1} )		// db.Employees.find( {}, {id:1, fname:1} )
+
+------------------------------------------------------------------------------------------
+
+03. Write the query to display the all fields   but exclude the field id for all the documents in the collection.
+
+Sol.db.Employees.find( {}, {_id:0} )
+
+------------------------------------------------------------------------------------------
+
+04. Write the query to display the first 5 Employees  
+
+Sol. db.Employees.find().limit(5)
+
+------------------------------------------------------------------------------------------
+
+05. Write the query to display the next 5 Employees after skipping first 5  
+
+Sol. db.Employees.find().skip(5).limit(5)
+
+------------------------------------------------------------------------------------------
+
+06. Write the query to find the Employee who stay in Gurgaon city 
+
+Sol. db.Employees.find({city: "Gurgaon"})
+
+------------------------------------------------------------------------------------------
+
+07. Write the query to find the Employee who jan salary is less than 20000
+
+Sol. db.Employees.find( { "salary.1" : { $lt : 20000 } } )
+
+------------------------------------------------------------------------------------------
+
+08. Write the query to find the Employee who jan salary is less than 20000 and who stay in Gurgaon city.
+
+Sol.  db.Employees.find( { "salary.1" : { $lt : 20000 } , "city" : "Gurgaon" } )
+
+------------------------------------------------------------------------------------------
+
+09. Write the query to find the total salary of jan month for all the employee.
+
+Sol.  db.Employees.aggregate([ { $group: {_id: null, "TotalJanSalary": { $sum: "$salary.1" } } } ] )
+
+------------------------------------------------------------------------------------------
+
+10. Write the query to count how any employee stay in Gurgaon city.
+
+Sol. db.Employees.find({city: "Gurgaon"}).count()
