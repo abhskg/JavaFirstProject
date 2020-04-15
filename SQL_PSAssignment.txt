@@ -80,7 +80,7 @@ Sol.
 
 13.Write a query which displays the names of all the modules of the course titled 'Oracle DBA'
 
-Sol. 
+Sol. SELECT m.modulename FROM modules AS m, courses AS c , courseandmodules AS cm where m.modulecode = cm.modulecode AND cm.coursecode = c.coursecode AND c.title = 'Oracle DBA' ;
 
 -----------------------------------
 
