@@ -21,11 +21,11 @@ public class KeyRead_Line2 {
 		this.data = data;
 	}
 
-	public void displayData(int[] data) {
-		System.out.println(Arrays.toString(data));
+	public void displayData() {
+		System.out.println(Arrays.toString(this.data));
 	}
 
-	public void readData(int[] input) {
+	public void readData() {
 		Scanner Sc = new Scanner(System.in);
 		int temp;
 		for (int i = 0; i < this.size; i++) {
