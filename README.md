@@ -1,2 +1,2 @@
 # PS Assignments
-Assignment-5 : Java Advanced
+Assignment-6 : UI/UX
