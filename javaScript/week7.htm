@@ -122,59 +122,7 @@
 		outputElement.value = number3;
 		console.log(number1, number2, number3);
 	}
-	var employeeDetails = [
-	{id:1, name:'a', position:'manager'}, 
-	{id:2, name:'b', position:'director'}, 
-	{id:3, name:'c', position:'associate'}
-	];
-
-	function displayEmployeeData(){
-		let tbodyElement = document.getElementById('employee-tbody');
-		tbodyElement.innerHTML = "";
-		employeeDetails.forEach( emp => {
-			let trElement = document.createElement('tr');
-			let tdElement0 = document.createElement('td');
-			let tdElement1 = document.createElement('td');
-			let tdElement2 = document.createElement('td');
-			tdElement0.append(emp['id']);
-			tdElement1.append(emp['name']);
-			tdElement2.append(emp['position']);
-			trElement.appendChild(tdElement0);
-			trElement.appendChild(tdElement1);
-			trElement.appendChild(tdElement2);
-			tbodyElement.appendChild(trElement);
-
-		})
-	}
-
-	function displayParticularEmployee(){
-		let tbodyElement = document.getElementById('employee-tbody');
-		tbodyElement.innerHTML = "";
-		let employeeNameElement = document.getElementById('employee-name');
-		let employeeName = employeeNameElement.value;
-		let emp = employeeDetails.find(obj => {
-			return obj['name'] == employeeName;
-		})
-		console.log(emp);
-		if (emp !=undefined){
-			let trElement = document.createElement('tr');
-			let tdElement0 = document.createElement('td');
-			let tdElement1 = document.createElement('td');
-			let tdElement2 = document.createElement('td');
-			tdElement0.append(emp['id']);
-			tdElement1.append(emp['name']);
-			tdElement2.append(emp['position']);
-			trElement.appendChild(tdElement0);
-			trElement.appendChild(tdElement1);
-			trElement.appendChild(tdElement2);
-			tbodyElement.appendChild(trElement);
-
-		}else{
-			alert("No employee found");
-		}
-		
-
-	}
+	
 	</script>
 </body>
 </html>
